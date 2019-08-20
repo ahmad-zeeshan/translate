@@ -1,9 +1,19 @@
 import React from "react";
+import LanguageContext from "../contexts/LanguageContext";
 
 class Button extends React.Component {
-  state = {};
+  /*
+=> Create a context object (In our app we have LanguageContext object).
+=> Define context type in the nested component(child component).
+=> Thats it. You will get the this.context.
+*/
+
+  static contextType = LanguageContext;
+
   render() {
-    return <button className="ui button primary">Submit</button>;
+    //console.log(this.context);
+    const text = this.context === "english" ? "Submit" : "Voorleggen";
+    return <button className="ui button primary">{text}</button>;
   }
 }
 
