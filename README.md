@@ -1,3 +1,14 @@
+
+
+SOME IMPORTANT NOTES
+
+1) The purpose of Context System is sharing information between components i.e., from directly parent component to some nested component.
+2) We have two ways of getting information into a context object; and two ways of getting information out of context object.
+3) We can set up the context property by defining that context type on our component class.
+4) If want to consume multiple different context values we have to make use of the Consumer object instead of this.context.
+      
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
