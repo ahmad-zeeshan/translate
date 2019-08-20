@@ -7,13 +7,20 @@ class Button extends React.Component {
 => Define context type in the nested component(child component).
 => Thats it. You will get the this.context.
 */
-
+  /*
+By using Consumer function: In order to get the value out of the context object, we are going to pass a single function
+as a 'child'; that child would be called with whatever value inside our 'pipe'.
+*/
   static contextType = LanguageContext;
 
   render() {
-    //console.log(this.context);
-    const text = this.context === "english" ? "Submit" : "Voorleggen";
-    return <button className="ui button primary">{text}</button>;
+    return (
+      <button className="ui button primary">
+        <LanguageContext.Consumer>
+          {value => (value === "english" ? "Submit" : "Voorleggen")}
+        </LanguageContext.Consumer>
+      </button>
+    );
   }
 }
 
